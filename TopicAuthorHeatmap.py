@@ -14,7 +14,7 @@ data_folder="./data/"
 
 # ChiLit books
 df_metadata = pd.read_csv(f"{data_folder}ChiLit_metadata.csv", encoding="utf-8")
-df_authors = pd.read_csv(f"{data_folder}ChiLit_Authors.csv", encoding="utf-8")
+df_authors = pd.read_csv(f"{data_folder}ChiLit_authors.csv", encoding="utf-8")
 df_chilit = pd.read_csv(f"{data_folder}ChiLit_Chunks_{chunk_size}.csv")
 df_chilit = df_chilit.fillna("")
 
@@ -22,7 +22,7 @@ df_chilit = df_chilit.fillna("")
 final_model = pickle.load(open(f"{data_folder}Octis_ProdLDA_output.pkl", "rb"))
 
 # Topic Labesl
-with open(f"{data_folder}OCTIS_ProdLDA_Topic_Labels.json", 'r') as file:
+with open(f"{data_folder}Octis_ProdLDA_Topic_Labels.json", 'r') as file:
   labels = json.load(file)
 topic_labels = [value['primary_label'] for value in labels.values()]
 
