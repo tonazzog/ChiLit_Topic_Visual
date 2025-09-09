@@ -37,7 +37,7 @@ df_topics['chapter_num'] = df_chilit['chapter_num'].to_list()
 book_topic_df = df_topics.drop(['chapter_num'], axis=1).groupby("book_id").mean()
 
 # Initialize the Dash app
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, serve_locally=True)
 server = app.server
 
 
@@ -291,5 +291,5 @@ def reset_filters(n_clicks):
         return list(book_topic_df.index), list(book_topic_df.columns), 5, 0
     return dash.no_update
 
-if __name__ == '__main__':
-    app.run(debug=True)
+#if __name__ == '__main__':
+#    app.run(debug=True)
