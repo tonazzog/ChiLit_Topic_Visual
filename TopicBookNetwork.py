@@ -23,7 +23,7 @@ df_chilit = df_chilit.fillna("")
 final_model = pickle.load(open(f"{data_folder}Octis_ProdLDA_output.pkl", "rb"))
 
 # Topic Labesl
-with open(f"{data_folder}OCTIS_ProdLDA_Topic_Labels.json", 'r') as file:
+with open(f"{data_folder}Octis_ProdLDA_Topic_Labels.json", 'r') as file:
   labels = json.load(file)
 topic_labels = [value['primary_label'] for value in labels.values()]
 
