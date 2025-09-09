@@ -35,9 +35,10 @@ df_topics['chapter_num'] = df_chilit['chapter_num'].to_list()
 
 # Aggreagate topics by book
 book_topic_df = df_topics.drop(['chapter_num'], axis=1).groupby("book_id").mean()
+
 # Initialize the Dash app
 app = dash.Dash(__name__)
-
+server = app.server
 
 
 def create_network_graph(book_topic_df, n_top=5, min_weight=0.0, selected_books=None, selected_topics=None):

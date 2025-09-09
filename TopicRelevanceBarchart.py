@@ -63,7 +63,8 @@ def create_topic_relevance_dash_app(df, title="Topic Relevance Explorer", color_
     
     # Initialize the Dash app
     app = dash.Dash(__name__)
-    
+    server = app.server
+
     # Define the layout
     app.layout = html.Div([
         html.Div([
@@ -248,9 +249,11 @@ def run_topic_relevance_app(df, host='127.0.0.1', port=8050, debug=True):
     app = create_topic_relevance_dash_app(df, color_sequence=color_sequence)
     app.run(host=host, port=port, debug=debug)
 
-# To use with your data:
-# app = create_topic_relevance_dash_app(agg_df)
-# app.run(debug=True)
+
+app = create_topic_relevance_dash_app(agg_df)
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 # Or use the convenience function:
-run_topic_relevance_app(agg_df)
+#run_topic_relevance_app(agg_df)

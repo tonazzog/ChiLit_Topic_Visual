@@ -318,11 +318,11 @@ def run_topic_heatmap_app(agg_df, title="Topic Relevance Heatmap", row_height=30
     app = create_topic_heatmap_app(agg_df, title, row_height)
     app.run(debug=debug, port=port, host=host)
 
-# Example usage:
-# app = create_topic_heatmap_app(agg_df)
-# 
-# if __name__ == '__main__':
-#     app.run_server(debug=True, port=8051)
+
+app = create_topic_heatmap_app(agg_df)
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 # To use the direct run version:
-run_topic_heatmap_app(agg_df)
+#run_topic_heatmap_app(agg_df)
