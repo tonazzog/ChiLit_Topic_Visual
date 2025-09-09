@@ -46,6 +46,7 @@ agg_df = agg_df.groupby('author').mean()
 colormap = plt.colormaps['tab20'].colors  # can be 'hsv', 'tab20', 'nipy_spectral', etc.
 color_sequence = [mcolors.to_hex(colormap[i]) for i in range(n_topics)]
 
+
 def create_topic_heatmap_app(agg_df, title="Topic Relevance Heatmap", row_height=30):
     """
     Create a Dash app with an interactive heatmap and individual author selection.
@@ -333,10 +334,10 @@ def run_topic_heatmap_app(agg_df, title="Topic Relevance Heatmap", row_height=30
     app.run(debug=debug, port=port, host=host)
 
 # Example usage:
-# app = create_topic_heatmap_app(agg_df)
-# 
-# if __name__ == '__main__':
-#     app.run_server(debug=True, port=8051)
+app = create_topic_heatmap_app(agg_df)
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 # To use the direct run version:
-run_topic_heatmap_app(agg_df)
+#run_topic_heatmap_app(agg_df)
