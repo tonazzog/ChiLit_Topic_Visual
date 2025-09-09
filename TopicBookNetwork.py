@@ -160,7 +160,6 @@ def create_plotly_figure(B, books, topics, book_topic_df):
     fig = go.Figure(data=[edge_trace, book_trace, topic_trace],
                    layout=go.Layout(
                        title='Interactive Book-Topic Network',
-                       titlefont_size=16,
                        showlegend=True,
                        hovermode='closest',
                        margin=dict(b=20,l=5,r=5,t=40),
